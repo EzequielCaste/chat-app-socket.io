@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Socket.IO Chat</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Node Socket.IO Chat App</title>    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />    
   </head>
   <body>
-    <h1>Socket.IO Chat</h1>
+      
+      <header>
+        <div class="container">
+          <h2 class="title has-text-centered mt-3">
+            Socket.IO Chat
+            <a href="https://github.com/EzequielCaste" rel="noopener noreferrer" target="_blank">
+                  <i class="fab fa-github ml-3"></i>
+                </a>
+          </h2>
+        </div>
+      </header>
+    
+      <section class="section">
+        
+          <div class="flex-container">
+            <ul id="messages"></ul>
+            <div class="section-spacer"></div>
+          </div>
+          <section class="">
+            <form action="">
+              <div class="field has-addons is-horizontal">
+                <div class="control is-expanded">
+                  <input
+                    class="input is-info"
+                    oninput="handleInput()"
+                    id="m"
+                    autocomplete="off"
+                  />
+                </div>            
+              <div class="control">
+                <button class="button is-link">Send</button>
+              </div>
+            </form>
+          </section>        
+       
+      </section>
+   
   </body>
 </html>
