@@ -53,6 +53,50 @@
           </section>        
        
       </section>
-   
+   <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      const inputM = document.getElementById('m');
+      const form = document.querySelector('form');
+      const messages = document.querySelector('#messages');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (inputM.value) {
+          socket.emit('chat message', inputM.value);
+        }
+        inputM.value = '';
+        return false;
+      });
+
+      socket.on('chat message', function (msg) {        
+        const node = document.createElement('LI');
+        node.innerHTML = msg;
+        messages.append(node);        
+        messages.lastElementChild.scrollIntoView();
+      });
+
+      socket.on('is_online', (username) => {
+        const node = document.createElement('LI');
+        node.innerHTML = username;
+        document.querySelector('#messages').append(node);
+        messages.lastElementChild.scrollIntoView();
+      });
+
+      socket.on('is_typing', (username) => {
+        document.querySelector('.section-spacer').innerHTML = username;
+        setTimeout(() => {
+          document.querySelector('.section-spacer').innerHTML = '';
+        }, '800');
+      });
+
+      const username = prompt('Nombre / Name ?');
+
+      socket.emit('username', username);
+
+      function handleInput() {
+        socket.emit('is_typing', username);
+      }
+    </script>
   </body>
 </html>
