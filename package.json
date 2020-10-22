@@ -1,0 +1,29 @@
+{
+  "name": "chat-app-socket.io",
+  "version": "1.0.0",
+  "description": "Chat app using socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EzequielCaste/chat-app-socket.io.git"
+  },
+  "keywords": [
+    "chat",
+    "socket.io",
+    "node",
+    "express"
+  ],
+  "author": "Ezequiel Castellanos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EzequielCaste/chat-app-socket.io/issues"
+  },
+  "homepage": "https://github.com/EzequielCaste/chat-app-socket.io#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
